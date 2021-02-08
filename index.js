@@ -1,4 +1,5 @@
 const MONDAY = 0;
+const FRIDAY = 4;
 
 const months = [
     "January",
@@ -41,7 +42,6 @@ const drawCalendarContent = (currentMonth, currentYear, currentDay = null) => {
     weeksWrapper.innerHTML = "";
     const firstDayNum = new Date(currentYear, currentMonth, 1);
     const lastDay = new Date(currentYear, +currentMonth + 1, 0);
-    console.log(lastDay);
     let firstDay = firstDayNum.getDay();
     const numberOfDays = lastDay.getDate();
     console.log(numberOfDays);
@@ -50,6 +50,7 @@ const drawCalendarContent = (currentMonth, currentYear, currentDay = null) => {
     firstDay === 0 ? (firstDay = 6) : firstDay--; //Monday - 0, Sunday - 6
 
     if (numberOfDays === 28 && firstDay === MONDAY) numberOfWeeks--;
+    if (numberOfDays === 31 && firstDay > FRIDAY) numberOfWeeks++;
 
     let day = 0;
 
