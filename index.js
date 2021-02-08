@@ -67,6 +67,8 @@ const drawCalendarContent = (currentMonth, currentYear, currentDay = null) => {
                 cell.innerHTML = day;
             } else if (day > lastDay.getDate()) {
                 cell.innerHTML = " ";
+                row.appendChild(cell);
+                continue;
             } else if (i === 0 && j < firstDay) {
                 day--;
                 cell.innerHTML = "";
@@ -125,6 +127,5 @@ previousBtn.addEventListener("click", (event) => {
 
 document.querySelector("#okBtn").addEventListener("click", (event) => {
     const today = new Date();
-
     drawCalendar(today);
 });
