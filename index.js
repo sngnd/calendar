@@ -39,11 +39,12 @@ const drawCalendar = (currentDate) => {
 const drawCalendarContent = (currentMonth, currentYear, currentDay = null) => {
     const weeksWrapper = document.querySelector(".weeks__wrapper");
     weeksWrapper.innerHTML = "";
-
     const firstDayNum = new Date(currentYear, currentMonth, 1);
-    const lastDay = new Date(currentYear, currentMonth + 1, 0);
+    const lastDay = new Date(currentYear, +currentMonth + 1, 0);
+    console.log(lastDay);
     let firstDay = firstDayNum.getDay();
     const numberOfDays = lastDay.getDate();
+    console.log(numberOfDays);
     let numberOfWeeks = 5;
 
     firstDay === 0 ? (firstDay = 6) : firstDay--; //Monday - 0, Sunday - 6
