@@ -1,0 +1,85 @@
+$cellwidth: calc(100% / 7);
+$tablecolor: rgb(214, 214, 214);
+$graycolor: rgba(231, 231, 231, 0.637);
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.calendar__header {
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 0.2rem;
+    text-transform: uppercase;
+}
+
+.calendar__wrapper {
+    display: none;
+    justify-content: space-between;
+}
+
+.calendar {
+    width: 80%;
+    font-family: "Poppins", sans-serif;
+}
+
+.previousBtn,
+.nextBtn {
+    width: calc(10% - 2rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 0 1rem;
+    &:hover {
+        background-color: $graycolor;
+    }
+}
+
+.fas {
+    font-size: 2rem;
+    color: rgb(102, 102, 102);
+}
+
+.week__header {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    background-color: $tablecolor;
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+.day-of-week {
+    width: $cellwidth;
+    text-transform: uppercase;
+    border-right: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:last-child {
+        border-right: none;
+    }
+}
+
+.week {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    & .day {
+        width: $cellwidth;
+        text-align: end;
+        padding-right: 5px;
+        border: 1px solid $tablecolor;
+        border-right: none;
+        border-top: none;
+        &:last-child {
+            border-right: 1px solid $tablecolor;
+        }
+    }
+}
+
+.current {
+    background-color: rgb(216, 238, 248);
+}
